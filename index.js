@@ -1,6 +1,10 @@
 var express=require('express');
 var app=express();
+var bodyParser = require('body-parser');
+ app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set("view engine","pug");
+
 var mangoose=require('mongoose');
 mangoose.connect('mongodb://localhost/my_db');
 var personSchema =mangoose.Schema({
@@ -36,3 +40,6 @@ app.post('/person', function(req, res){
   }
 });
 app.listen(3000);
+Person.find(function(err, response){
+   console.log(response);
+});
