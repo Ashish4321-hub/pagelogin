@@ -13,11 +13,12 @@ var personSchema =mangoose.Schema({
   nationality : String
 });
 var Person = mangoose.model("Person",personSchema);
+//app.get('/people', function(req, res){ res.render('people');res.redirect("/person")});
 
 app.get('/person', function(req, res){
   res.render('person');
 });
-app.post('/person', function(req, res){
+ app.post('/person', function(req, res){
   var personInfo = req.body; //Get the parsed information
   
   if(!personInfo.name || !personInfo.age || !personInfo.nationality){
@@ -38,10 +39,12 @@ app.post('/person', function(req, res){
               message: "New person added", type: "success", person: personInfo});
      });
   }
-});
+ });
+ //app.get('/people', function(req, res){ res.render('people');res.redirect("/person")});
+
 app.listen(3000);
 Person.find(function(err, response){
    console.log(response);
 });
-
+ 
 
