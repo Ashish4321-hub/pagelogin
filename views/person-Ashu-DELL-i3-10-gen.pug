@@ -1,0 +1,22 @@
+html
+head
+   title Person
+   style 
+     include style.css
+   body
+         
+     form(action = "/person", method = "POST")
+       h1 Candidate's Details
+       div
+         label(for = "name") Name       :   
+         input(name = "name")
+       br
+       div
+         label(for = "age") Age        : 
+         input(name = "age")
+       br
+       div
+         label(for = "nationality") Nationality: 
+         input(name = "nationality")
+       br
+       button(type = "submit") Create new person
