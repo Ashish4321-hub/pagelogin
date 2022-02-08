@@ -13,7 +13,7 @@ var personSchema =mangoose.Schema({
   nationality : String
 });
 var Person = mangoose.model("Person",personSchema);
-//app.get('/people', function(req, res){ res.render('people');res.redirect("/person")});
+
 
 app.get('/person', function(req, res){
   res.render('person');
