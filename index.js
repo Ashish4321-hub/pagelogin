@@ -13,13 +13,13 @@ var personSchema =mangoose.Schema({
   nationality : String
 });
 var Person = mangoose.model("Person",personSchema);
-//app.get('/people', function(req, res){ res.render('people');res.redirect("/person")});
+
 
 app.get('/person', function(req, res){
   res.render('person');
 });
  app.post('/person', function(req, res){
-  var personInfo = req.body; //Get the parsed information
+  var personInfo = req.body;
   
   if(!personInfo.name || !personInfo.age || !personInfo.nationality){
      res.render('show_message', {
