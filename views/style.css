@@ -21,7 +21,9 @@ input{
 button{
   font-size: 25px;
   background-color: aquamarine;
+
 }
 input:hover{
   background-color: black;
+  border-color: chartreuse;
 }
